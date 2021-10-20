@@ -78,15 +78,18 @@
 
             if($linha['km'] > 100000){
                 $preco = $linha['valor'] - $desconto;
-                $cor =".vermelho";
+                $color ="red";
                 
         } else {
         $preco = $linha['valor'];
-        $cor = "preto";}
+        $color = "style =color: black'";}
 
             if($idade > 10){
             $precoF = $preco - $desconto;
-        } else {$precoF = $preco;}
+            $color1 ="red";
+            
+        } else {$precoF = $preco;
+            $color1 = "black";}
 
 
             
@@ -97,16 +100,16 @@
 
 	    <tr><td><?php echo $linha['id'];?></td>
             <td><?php echo $linha['nome'];?></td>
-            <td><?php echo number_format ($linha['valor'], 1, ',', '.') ;?></td>
+            <td <?php echo "style='color: $color'"?>><?php echo number_format ($linha['valor'], 1, ',', '.') ;?></td>
             <td><?php echo number_format ($linha['km'], 1, ',', '.');?></td>
             <td><?php echo date("d/m/Y",strtotime($linha['dataFabricacao']))
                 ;?></td>
-            <td><?php echo $idade;?></td>
+            <td <?php echo "style='color: $color1'"?>><?php echo $idade;?></td>
             <td><?php echo number_format ($media, 1, ',', '.');?>
-            <td style="color:<?php echo $cor;?>"><?php echo $precoF;?></td>
+            <td><?php echo $precoF;?></td>
 	   
         </tr>
-            <?php } ?>       
+            <?php }?>       
         </table>
     </fieldset>
     </form>
