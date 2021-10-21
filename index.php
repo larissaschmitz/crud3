@@ -36,13 +36,13 @@
         </tr> 
 
 <fieldset>Ordernar e pesquisar por:<br>
-<form method="post" action="">
+
         <input type="radio" name="busca" value="1" <?php if ($busca == "1") echo "checked" ?>>Nome<br>
         <input type="radio" name="busca" value="2" <?php if ($busca == "2") echo "checked" ?>>Valor<br>
         <input type="radio" name="busca" value="3" <?php if ($busca == "3") echo "checked" ?>>KM<br>
 </fieldset>
 
-</form>     
+
 
         <?php
             $pdo = Conexao::getInstance(); 
@@ -97,11 +97,10 @@
         ?>
 
 
-
-	    <tr><td><?php echo $linha['id'];?></td>
+<tr><td><?php echo $linha['id'];?></td>
             <td><?php echo $linha['nome'];?></td>
-            <td <?php echo "style='color: $color'"?>><?php echo number_format ($linha['valor'], 1, ',', '.') ;?></td>
-            <td><?php echo number_format ($linha['km'], 1, ',', '.');?></td>
+            <td><?php echo number_format ($linha['valor'], 1, ',', '.') ;?></td>
+            <td <?php echo "style='color: $color'"?>><?php echo number_format ($linha['km'], 1, ',', '.');?></td>
             <td><?php echo date("d/m/Y",strtotime($linha['dataFabricacao']))
                 ;?></td>
             <td <?php echo "style='color: $color1'"?>><?php echo $idade;?></td>
@@ -112,7 +111,7 @@
             <?php }?>       
         </table>
     </fieldset>
-    </form>
+
 </body>
 </html>
 
